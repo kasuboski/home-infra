@@ -5,10 +5,10 @@ protocol = "tcp"
 [servers.http.discovery]
 kind = "static"
 static_list = [
-  "blueberry.joshcorp.co:30080",
-  "cherry.joshcorp.co:30080",
-  "pumpkin.joshcorp.co:30080",
-  "apple.joshcorp.co:30080"
+  "blueberry:30080",
+  "cherry:30080",
+  "pumpkin:30080",
+  "apple:30080"
 ]
 
 [servers.http.healthcheck]
@@ -23,10 +23,10 @@ protocol = "tcp"
 [servers.https.discovery]
 kind = "static"
 static_list = [
-  "blueberry.joshcorp.co:30443",
-  "cherry.joshcorp.co:30443",
-  "pumpkin.joshcorp.co:30443",
-  "apple.joshcorp.co:30443"
+  "blueberry:30443",
+  "cherry:30443",
+  "pumpkin:30443",
+  "apple:30443"
 ]
 
 [servers.https.healthcheck]
