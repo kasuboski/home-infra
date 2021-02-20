@@ -1,0 +1,12 @@
+# /etc/systemd/system/gobetween.service
+[Unit]
+Description=Simple load balancer
+After=network.target
+Wants=network-online.target
+
+[Service]
+Restart=on-failure
+Type=simple
+ExecStart=/usr/bin/gobetween from-url https://raw.githubusercontent.com/kasuboski/home-infra/main/gobetween.toml
+[Install]
+WantedBy=multi-user.target
