@@ -1,0 +1,35 @@
+[servers.http]
+bind = "0.0.0.0:80"
+protocol = "tcp"
+
+[servers.http.discovery]
+kind = "static"
+static_list = [
+  "blueberry.joshcorp.co:30080",
+  "cherry.joshcorp.co:30080",
+  "pumpkin.joshcorp.co:30080",
+  "apple.joshcorp.co:30080"
+]
+
+[servers.http.healthcheck]
+kind = "ping"
+interval = "5s"
+ping_timeout_duration = "500ms"
+
+[servers.https]
+bind = "0.0.0.0:443"
+protocol = "tcp"
+
+[servers.https.discovery]
+kind = "static"
+static_list = [
+  "blueberry.joshcorp.co:30443",
+  "cherry.joshcorp.co:30443",
+  "pumpkin.joshcorp.co:30443",
+  "apple.joshcorp.co:30443"
+]
+
+[servers.https.healthcheck]
+kind = "ping"
+interval = "5s"
+ping_timeout_duration = "500ms"
