@@ -33,4 +33,17 @@ wget https://raw.githubusercontent.com/kasuboski/k8s-gitops/master/networking/ci
 kubectl apply -f cilium.yaml
 ```
 
+## Agent
+```
+server: "https://k3s-api.home.joshcorp.co:6443"
+token-file: "/etc/rancher/k3s/token"
 
+node-label:
+- "topology.kubernetes.io/zone=cloud"
+- "topology.kubernetes.io/region=oracle"
+
+node-ip: "100.112.197.93"
+```
+`curl -sfL https://get.k3s.io | K3S_URL=https://k3s-api.home.joshcorp.co:6443 K3S_TOKEN=$(cat token) sh -`
+
+This didn't work without setting the environment variables even though it's in config.yaml.

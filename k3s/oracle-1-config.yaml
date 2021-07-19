@@ -1,0 +1,9 @@
+node-label:
+- "topology.kubernetes.io/zone=cloud"
+- "topology.kubernetes.io/region=oracle"
+
+node-ip: "100.112.197.93"
+bind-address: "100.112.197.93"
+
+flannel-backend: "none"
+disable: ["traefik", "svclb"]
