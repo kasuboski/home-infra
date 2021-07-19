@@ -7,11 +7,12 @@ tls-san:
 - "k3s-api.home.joshcorp.co"
 - "100.113.245.67"
 
+node-taint:
+- "CriticalAddonsOnly=true:NoExecute"
+
 node-label:
 - "topology.kubernetes.io/zone=cloud"
 - "topology.kubernetes.io/region=linode"
-
-datastore-endpoint: "postgres://user:password@postgreshost:5432/kubernetes?sslmode=disable"
 
 node-ip: "100.113.245.67"
 bind-address: "100.113.245.67"
