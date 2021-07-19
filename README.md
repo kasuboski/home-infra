@@ -23,3 +23,5 @@ NODE_TOKEN=from server at /var/lib/rancher/k3s/server/node-token
 
 curl -sfL https://get.k3s.io | K3S_URL=https://10.64.205.130:6443 K3S_TOKEN=$NODE_TOKEN INSTALL_K3S_EXEC='--no-flannel --node-label storagespeed=slow' sh -
 ```
+Prefer not to schedule on the control plane
+`k taint node blueberry node-role.kubernetes.io/master:PreferNoSchedule node-role.kubernetes.io/control-plane:PreferNoSchedule`
