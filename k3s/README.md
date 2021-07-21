@@ -21,6 +21,8 @@ flannel-backend: "none"
 disable: ["traefik", "svclb"]
 ```
 
+`iptables -t nat -A ts-postrouting -s 10.42.0.0/16 -o tailscale0 -j MASQUERADE`
+
 ```
 wget https://github.com/containernetworking/plugins/releases/download/v0.9.1/cni-plugins-linux-amd64-v0.9.1.tgz
 tar -xvzf cni-plugins-linux-amd64-v0.9.1.tgz -C /opt/cni/bin
