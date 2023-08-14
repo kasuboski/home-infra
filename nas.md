@@ -64,7 +64,7 @@ https://wiki.selfhosted.show/tools/snapraid-btrfs/#data-subvolumes
 ```
 mkfs.xfs -L parity0 /dev/sda1
 mkfs.btrfs -L data0 /dev/sdd1
-mkfs.btrfs -L data0 /dev/sdc1
+mkfs.btrfs -L data1 /dev/sdc1
 
 ```
 Add mounts to nix config by uuid. /mnt/parity0, /mnt/root/data{0,1}
