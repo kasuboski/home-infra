@@ -38,19 +38,19 @@ Basically followed https://guekka.github.io/nixos-server-1/
 
   mkdir -p /mnt/boot
   mount /dev/disk/by-label/boot /mnt/boot
-  mount -o subvol=root,compress=zstd,noatime /dev/disk/by-label /mnt
+  mount -o subvol=root,compress=zstd,noatime /dev/disk/by-label/nixos /mnt
 
   mkdir /mnt/home
-  mount -o subvol=home,compress=zstd,noatime /dev/disk/by-label /mnt/home
+  mount -o subvol=home,compress=zstd,noatime /dev/disk/by-label/nixos /mnt/home
 
   mkdir /mnt/nix
-  mount -o subvol=nix,compress=zstd,noatime /dev/disk/by-label /mnt/nix
+  mount -o subvol=nix,compress=zstd,noatime /dev/disk/by-label/nixos /mnt/nix
 
   mkdir /mnt/persist
-  mount -o subvol=persist,compress=zstd,noatime /dev/disk/by-label /mnt/persist
+  mount -o subvol=persist,compress=zstd,noatime /dev/disk/by-label/nixos /mnt/persist
 
   mkdir -p /mnt/var/log
-  mount -o subvol=log,compress=zstd,noatime /dev/disk/by-label /mnt/var/log
+  mount -o subvol=log,compress=zstd,noatime /dev/disk/by-label/nixos /mnt/var/log
 
   nixos-generate-config --root /mnt
   # add user and make sure ssh configured
